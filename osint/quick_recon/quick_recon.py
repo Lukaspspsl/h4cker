@@ -18,7 +18,7 @@ def SubdomainFilter(URL):
 
 if os.path.exists("alpha.txt"):
   print("")
-  Qupdate = requests.get('https://raw.githubusercontent.com/The-Art-of-Hacking/h4cker/osint/quick_recon/qrecon_update.txt') #Quantom
+  Qupdate = requests.get('https://raw.githubusercontent.com/The-Art-of-Hacking/h4cker/osint/quick_recon/qrecon_update.txt', timeout=60) #Quantom
   Qupdate.status_code
   if Qupdate.status_code == 200:
    print(colored ('Cheking Update...' ,'white'))
