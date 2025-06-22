@@ -14,7 +14,7 @@ from http import cookiejar
 TLD = ["co.ma","dz","ru","ca"]
 zolo  = random.choice(TLD)
 
-X = requests.get('https://www.google.com/webhp?ei=1') # : /
+X = requests.get('https://www.google.com/webhp?ei=1', timeout=60) # : /
 X.status_code
 if X.status_code == 200:
  time.sleep(5)

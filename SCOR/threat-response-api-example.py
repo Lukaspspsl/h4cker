@@ -45,7 +45,7 @@ def TR_generate_token():
     response = requests.post(config['token_url'], headers=headers,
                          auth=(config['threat_response_api_client_id'],
                                config['threat_response_api_client_pass']),
-                         data=payload)
+                         data=payload, timeout=60)
 
     if TR_unauthorized(response):
         sys.exit('Unable to generate new token!\nCheck your CLIENT_ID and CLIENT_PASSWORD')
